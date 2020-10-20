@@ -3,18 +3,6 @@ import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
 
 class Shelves extends React.Component {
-  updateBookQuery = (bookQuery) => {
-    this.setState(
-      {
-        bookQuery: bookQuery,
-      },
-      () => {
-        console.log(this.state.bookQuery);
-        this.searchApi();
-      }
-    );
-  };
-
   render() {
     return (
       <div className="list-books">

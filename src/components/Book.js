@@ -13,11 +13,12 @@ class Book extends React.Component {
   handleChange = (targetShelf, bookObject) => {
     this.props.onShelfChange(bookObject, targetShelf);
   };
-
   render() {
+  const {books} = this.props;
+
     return (
       <ol className="books-grid">
-        {this.props.books.map((book) => (
+        {books.map((book) => (
           <li key={`${book.id}`} className="book">
               <div className="book-top">
                 <div
@@ -58,7 +59,9 @@ class Book extends React.Component {
               )}
           </li>
         ))}
+         
       </ol>
+      
     );
   }
 }
