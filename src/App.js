@@ -16,10 +16,10 @@ class BooksApp extends React.Component {
   componentDidMount() {
     this.getBook();
   }
+  
   getBook = async () => {
-    getAll().then((child) => {
-      console.log("getBook", child);
-      this.setState({ books: child });
+    getAll().then((data) => {
+      this.setState({ books: data });
     });
   };
 
@@ -45,7 +45,6 @@ class BooksApp extends React.Component {
     return (
       <Router>
         <div className="app">
-          {console.log(this.state.books)}
           <Route
             exact
             path="/"

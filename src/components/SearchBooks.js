@@ -2,7 +2,7 @@ import React from "react";
 import { search } from "../BooksAPI";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Book from "./../components/Book";
+import Book from "./Book";
 
 class SearchBooks extends React.Component {
   static propTypes = {
@@ -22,7 +22,7 @@ class SearchBooks extends React.Component {
       search(this.state.bookQuery).then((query) => {
         if (query.error !== "empty query") this.setState({ bookFound: query });
       });
-    } else console.log(this.state.bookFound);
+    } 
   };
 
   updateBookQuery = (bookQuery) => {
@@ -31,7 +31,6 @@ class SearchBooks extends React.Component {
         bookQuery: bookQuery,
       },
       () => {
-        console.log(this.state.bookQuery);
         this.searchApi();
       }
     );
