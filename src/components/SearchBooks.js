@@ -33,8 +33,10 @@ class SearchBooks extends React.Component {
           this.setState({ bookFound: query });
           return null;
         }
+        else this.setState({ bookFound: [] });
       });
-    } else this.setState({ bookFound: [] });
+    } 
+    else this.setState({ bookFound: [] });
   };
 
   updateBookQuery = (bookQuery) => {
