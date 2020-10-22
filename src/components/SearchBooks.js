@@ -67,7 +67,7 @@ class SearchBooks extends React.Component {
           </div>
         </div>
         <div className="search-books-results">
-          {this.state.bookFound.length ? (
+          {this.state.bookFound.length && this.state.bookQuery !== ""? (// This condition should be written so that old books are still not visible when the search result is quickly deleted.
             <Book
               books={this.state.bookFound}
               onShelfChange={this.props.onShelfChange}
